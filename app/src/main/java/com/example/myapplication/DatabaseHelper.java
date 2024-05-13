@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -20,5 +21,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+    }
+    public Cursor getData()
+    {
+        SQLiteDatabase DB = this.getWritableDatabase();
+        Cursor Cursor = DB.rawQuery("Select * from lista", null);
+        return Cursor;
     }
 }
