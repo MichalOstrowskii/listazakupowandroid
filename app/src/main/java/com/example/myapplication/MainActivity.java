@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = baza.getData();
         if(cursor.getCount()==0)
         {
-            Toast.makeText(MainActivity.this, "Blad!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "Pusta lista!", Toast.LENGTH_SHORT).show();
         }
         else
         {

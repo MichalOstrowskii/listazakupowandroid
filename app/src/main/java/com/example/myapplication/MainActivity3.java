@@ -18,10 +18,10 @@ public class MainActivity3 extends AppCompatActivity {
     public void usun(View v)
     {
         EditText id = findViewById(R.id.editTextText3);
-        int idp = Integer.parseInt(id.getText().toString());
+        String idp = id.getText().toString();
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.execSQL("DELETE FROM lista WHERE id="+idp+";");
+        db.execSQL("DELETE FROM lista WHERE nazwa='"+idp+"';");
         db.close();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
